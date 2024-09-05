@@ -1,9 +1,10 @@
+'use client'
 import React, { useState, useRef } from 'react';
 import { Trash2, Lock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Alert, AlertDescription, AlertTitle } from '../components/ui/alert';
 
 const AudioOrganizer = () => {
   const [groups, setGroups] = useState([]);
@@ -11,7 +12,7 @@ const AudioOrganizer = () => {
   const fileInputRef = useRef(null);
   
   // In a real app, this would be determined by actual authentication
-  const isAdmin = false; // Set this to true to test admin features
+  const isAdmin = true; // Set this to true to test admin features
 
   const addGroup = () => {
     if (newGroupName.trim() && isAdmin) {
